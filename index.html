@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html data-theme="night"></html>
+<head>
+  <title>42evaluators</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5"/>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>html,body{width:100%;height:100%;}</style>
+</head>
+
+
+
+<!-- calculator -->
+
+
+<script src="/apexcharts.min.js"></script>
+
+
+
+
+<div class="flex flex-col items-center m-10 justify-center h-[40%] translate-y-2/4 lg:translate-y-0 lg:h-[80%] overflow-x-hidden">
+  <div id="graph"></div>
+  <div id="projects" class="pr-2 flex flex-col h-full overflow-y-scroll overflow-x-hidden">
+
+
+   
+    <div class="project-picker flex  gap-2 grow justify-center">
+      <span>
+        <label for="level">Begin level</label>
+        <input
+          class="w-full input input-bordered"
+          type="number"
+          id="level"
+          name="level"
+          min="0"
+          max="30"
+          value="0"
+          placeholder=""
+        />
+      </span>
+
+      <span>
+        <label for="project">Project</label>
+        <select class="select select-bordered w-[99%]" name="project" id="project">
+
+        </select>
+      </span>
+
+      <span>
+        <label for="mark">Xp</label>
+        <!-- <div class="divider !mt-0 !mb-2 text-center">OR</div> -->
+        <input
+          class="w-full input input-bordered"
+          type="number"
+          id="xp"
+          name="xp"
+          placeholder="XP"
+        />
+      </span>
+
+      <span class="flex flex-col">
+        <label for="mark">Final mark</label>
+        <input
+          class="w-full input input-bordered"
+          type="number"
+          id="mark"
+          name="mark"
+          value="100"
+          placeholder="100"
+          min="0"
+          max="125"
+        />
+      </span>
+
+    </div>
+
+   
+
+  </div>
+  
+  <button id="add-project" class="btn mt-2 w-[80%]">Add project...</button>
+  <button id="delete-project" class="btn mt-2 w-[80%] "> Pop project </button>
+ 
+
+  
+</div>
+<div class="stats absolute bottom-0 right-0">
+  <div class="stat">
+    <div class="stat-title">Levels</div>
+    <div class="plus-level stat-value">+0.00</div>
+    <div class="xp-required stat-description">Unknown XP until next level</div>
+  </div>
+  <div class="stat">
+    <div class="stat-title">Blackhole</div>
+    <div class="plus-days stat-value">+0 days</div>
+    <div class="stat-description"><a class="underline" href="https://medium.com/@benjaminmerchin/42-black-hole-deep-dive-cbc4b343c6b2">How does it work!!</a></div>
+  </div>
+</div>
+
+<script src="/script.js"></script>
