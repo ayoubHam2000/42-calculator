@@ -122,14 +122,14 @@ async function loadData()
       }
     }
 
-    let levelForInitialXP;
-    for (let j in xpData) {
-      j = parseInt(j);
-      if (xpData[j].xp > initialUserXP) {
-        levelForInitialXP = xpData[j-1];
-        break;
-      }
-    }
+    // let levelForInitialXP;
+    // for (let j in xpData) {
+    //   j = parseInt(j);
+    //   if (xpData[j].xp > initialUserXP) {
+    //     levelForInitialXP = xpData[j-1];
+    //     break;
+    //   }
+    // }
 
     const xpToNextLevel = Math.max(0, parseInt(xpData[i].xp-newXP));
     document.querySelector(".xp-required").
@@ -142,11 +142,11 @@ async function loadData()
         (newXP - levelForXP.xp)/levelForXP.xpToNextLevel;
     series[id + 1] = newLevel.toFixed(2);
     labels[id + 1] = graphItem.reason;
-    charts.updateSeries([{
-      name: "Level",
-      data: series,
-    }]);
-    charts.updateOptions({ labels, });
+    // charts.updateSeries([{
+    //   name: "Level",
+    //   data: series,
+    // }]);
+    // charts.updateOptions({ labels, });
 
     const levelsEarned = series[series.length-1] - document.getElementsByName("level")[0].value;
     let sign = "+";
@@ -202,6 +202,11 @@ async function loadData()
       xp = null
       mark = null
     }
+    charts.updateSeries([{
+      name: "Level",
+      data: series,
+    }]);
+    charts.updateOptions({ labels, });
   }
 
   function addEvents(id)
