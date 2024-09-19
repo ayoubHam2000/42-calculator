@@ -36,7 +36,9 @@ async function loadData()
 
   let xpData = await fetchData('assets/xp.json');
   let projectsData = await fetchData('assets/project_data.json');
+  
 
+  projectsData.sort((a, b) => a.name.localeCompare(b.name))
   addProjects(projectsData)
 
   for (let i = 0; i < xpData.length - 1; i++)
@@ -61,6 +63,8 @@ async function loadData()
       Position : Math.floor(Math.hypot(project.x - libft.x, project.y - libft.y)),
     }
   })
+
+
 
 
 
